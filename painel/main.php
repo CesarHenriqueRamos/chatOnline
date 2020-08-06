@@ -17,6 +17,7 @@
     <title>Painel de Controle</title>
 </head>
 <body>
+<base base="<?php echo INCLUDE_PATH_PAINEL; ?>" />
 <header>
 		<div class="container">
 			<div class="menu-btn">
@@ -74,6 +75,7 @@
 <script src="https://kit.fontawesome.com/a076d05399.js"></script>
 <script src="https://code.jquery.com/jquery-3.5.0.min.js"></script>
 <script src="<?php echo INCLUDE_PATH_PAINEL; ?>js/script.js"></script>
+<script src="<?php echo INCLUDE_PATH_PAINEL; ?>js/constants.js"></script>
 <script src="<?php echo INCLUDE_PATH_PAINEL; ?>js/jquery.ajaxForm.js"></script>
 <?php Painel::loadJS(array('chat.js'),'chat');?>
 </body>
