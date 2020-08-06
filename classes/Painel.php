@@ -5,6 +5,14 @@ class Painel{
         '1' => 'SubAdministrador',
         '2' => 'Administrador'
     ];
+    public static function loadJS($files,$page){
+        $url = explode('/',@$_GET['url']);
+        if($page == $url[0]){    
+            foreach($files as $key => $value){
+                echo '<script src="'.INCLUDE_PATH_PAINEL.'js/'.$value.'"></script>';
+            }
+        } 
+    }
     public static function logado(){
         return isset($_SESSION['login'])? true : false;
     }

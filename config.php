@@ -22,7 +22,7 @@
 	define('HOST','localhost');
 	define('USER','root');
 	define('PASS','');
-	define('DB','saite_dinamico');
+	define('DB','chatonline');
 
 	//Constantes para o painel de controle
 	define('NOME_EMPRESA','RamosTecnolog');

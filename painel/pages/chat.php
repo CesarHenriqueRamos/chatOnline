@@ -10,8 +10,8 @@
         <?php } ?>
     </div>
 
-    <form action="" method="post">
-        <textarea name="" id="" cols="30" rows="5"></textarea>
+    <form action="<?php INCLUDE_PATH_PAINEL ?>ajax/chat.php" method="post">
+        <textarea name="mensagem" id="" cols="30" rows="5"></textarea>
         <input type="submit" value="Enviar" name="acao">
     </form>
 </div>

@@ -5,11 +5,13 @@
         $sql = MySql::connect()->prepare("SELECT * FROM `tb_admin.usuarios` WHERE user = ? AND password = ?");
             $sql->execute(array($user,$password));
             $info = $sql->fetch();
+            print_r($info);
             if($sql->rowCount() == 1){
                  //logado com sucesso
-                 $_SESSION['login'] = true;
+                 $_SESSION['login'] = true;                 
                  $_SESSION['user'] = $user;
                  $_SESSION['password'] = $password;
+                 $_SESSION['id'] = $info['id'];
                  $_SESSION['cargo'] = $info['cargo'];
                  $_SESSION['nome'] = $info['nome'];
                  $_SESSION['img'] = $info['img'];
@@ -47,6 +49,7 @@
                 $_SESSION['login'] = true;
                 $_SESSION['user'] = $user;
                 $_SESSION['password'] = $password;
+                $_SESSION['id'] = $info['id'];
                 $_SESSION['cargo'] = $info['cargo'];
                 $_SESSION['nome'] = $info['nome'];
                 $_SESSION['img'] = $info['img'];
