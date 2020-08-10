@@ -408,6 +408,63 @@ form#editar-usuario label{
     
     color: #4f4f4f;
 }
+/*calendario*/
+table{
+    width: 100%;
+    border-spacing: 0;
+    margin:10px 0;
+    background-color: white;
+}
+
+tr.title{
+    background-color: #4C6EF5;
+    color: white;
+    text-align: center;
+    margin: 0;
+    
+}
+tr.title td{
+    cursor:default;
+    
+}
+tr{
+     margin: 0;
+}
+td{
+    width: calc(100% / 7);
+    text-align: center;
+    border: 1px solid #ccc;
+    padding: 5px 0;
+    cursor: pointer;
+}
+.day-select{
+    background-color: #ccc;
+}
+form.atividade{
+    margin-top: 60px;
+}
+form h2.atividade{
+    font-size: 16px;
+    font-weight: lighter;
+    margin-top: 20px;
+} 
+.row1{
+background-color: #4C6EF5;
+border-top-left-radius: 5px;
+border-top-right-radius: 5px;
+padding: 10px;
+color: white;
+}
+.row2{
+    background-color: #ccc;
+    padding: 10px;
+    border-bottom: 2px solid white;
+}
+.colR{
+    width: 50%;
+    float: left;
+    
+}
 @media screen and ( max-width:1200px){
     .box-container .w33{
         height: 100px;

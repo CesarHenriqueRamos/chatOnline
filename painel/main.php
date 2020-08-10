@@ -24,6 +24,7 @@
                 <i class="fa fa-bars" ></i>
             </div>
             <div class="logout">
+            <a <?php if(@$_GET['url'] == 'calendario'){ ?>class="home"<?php } ?> href="<?php echo INCLUDE_PATH_PAINEL; ?>calendario"><i class="fas fa-calendar"></i> Calendario</a>
             <a <?php if(@$_GET['url'] == 'chat'){ ?>class="home"<?php } ?> href="<?php echo INCLUDE_PATH_PAINEL; ?>chat"><i class="fas fa-comments"></i> Chat</a>
             <div  class="btn-home" >
                 <a <?php if(@$_GET['url'] == ''){ ?>class="home"<?php } ?> href="<?php echo INCLUDE_PATH_PAINEL; ?>"><i class="fas fa-home"></i> Home</a>
@@ -78,5 +79,6 @@
 <script src="<?php echo INCLUDE_PATH_PAINEL; ?>js/constants.js"></script>
 <script src="<?php echo INCLUDE_PATH_PAINEL; ?>js/jquery.ajaxForm.js"></script>
 <?php Painel::loadJS(array('chat.js'),'chat');?>
+<?php Painel::loadJS(array('calendario.js'),'calendario');?>
 </body>
 </html>
