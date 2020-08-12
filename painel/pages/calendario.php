@@ -8,6 +8,7 @@
     $diaAtual = date('d',time());
     $meses = ['Janeiro','Fevereiro','Março','Abril','Maio','Junho','Julho','Agosto','Setembro','Outubro','Novembro','Dezembro'];
     $nomeMes = $meses[$mes-1];
+    $DataAtual = "$ano-$mes-$diaAtual";;
 ?>
 <div class="box-container w100">
     <h2 class="title"><i class="fas fa-calendar"></i> Calendario <?php echo $nomeMes.'|'.$ano?></h2>
@@ -55,11 +56,13 @@
            ?>
         </tr>
     </table> 
-    <form action="" method="post" class="atividade">
+    <form action="<?php INCLUDE_PATH_PAINEL ?>ajax/calendario.php" method="post" class="atividade">
     <h2 class="atividade"><i class="fas fa-calendar"></i> Adicional Tarefas Para o Dia <?php echo date('d/m/Y',time()) ?></h2>
-        <input type="text" name="atividade" id="">
-        <input type="hidden" name="data" value="2020-08-10">
-        <input type="submit" name="acao" value="Adicionar">
+        <input type="text" name="tarefa" id="">
+        <input type="time" name="hora" id="">
+        <input type="hidden" name="data" value="<?php echo date('Y-m-d') ?>">
+        <input type="hidden" name="acao" value="inserir">
+        <input type="submit"  value="Adicionar">
     </form>
 </div>
 <div class="box-container w100">
@@ -78,18 +81,23 @@
                     <div class="clear"></div>
                 </div><!--row-->  
                 <?php 
-                    for($i = 1;$i <=7;$i++){
-                 ?>           
-                <div class="row2">
-                    <div class="colR">
-                        <span>Medico</span>
-                    </div><!--col-->
-                    <div class="colR">
-                        <span>12:00</span>
-                    </div><!--col-->
-                  
-                    <div class="clear"></div>
-                </div><!--row-->
+                    $sql = MySql::connect()->prepare("SELECT * FROM `tb_admin.agenda` WHERE data = '$DataAtual'");
+                    $sql->execute();
+                    $dados = $sql->fetchAll();
+                    foreach($dados as $key => $value){
+                 ?> 
+                       
+                    <div class="row2">
+                        <div class="colR">
+                            <span><?php echo $value['tarefa'];?></span>
+                        </div><!--col-->
+                        <div class="colR">
+                            <span><?php echo $value['hora'];?></span>
+                        </div><!--col-->
+                    
+                        <div class="clear"></div>
+                    </div><!--row-->
+                
                 <?php 
                }
             ?>
